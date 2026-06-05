@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tassadit Debiane — ML / Research Engineer</title>
+<meta name="description" content="Tassadit Debiane — Generative AI, Computer Vision and Medical Imaging. ML / Research Engineer based in Paris." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0F1115;
+    --bg-2:#15181F;
+    --bg-3:#1B1F27;
+    --ink:#ECE7E1;
+    --muted:#9C978F;
+    --muted-2:#6F6B65;
+    --accent:#E8704A;
+    --accent-soft:rgba(232,112,74,.13);
+    --line:rgba(236,231,225,.11);
+    --maxw:1080px;
+    --serif:'Fraunces',Georgia,serif;
+    --sans:'Hanken Grotesk',-apple-system,sans-serif;
+    --mono:'JetBrains Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* subtle grain + glow atmosphere */
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:
+      radial-gradient(900px 600px at 78% -8%, rgba(232,112,74,.10), transparent 60%),
+      radial-gradient(700px 500px at -5% 12%, rgba(232,112,74,.05), transparent 55%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;position:relative;z-index:1}
+  a{color:inherit;text-decoration:none}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:20px 32px;
+    backdrop-filter:blur(10px);
+    background:linear-gradient(to bottom, rgba(15,17,21,.85), rgba(15,17,21,0));
+    border-bottom:1px solid transparent;
+    transition:border-color .3s, background .3s;
+  }
+  nav.scrolled{background:rgba(15,17,21,.92);border-bottom:1px solid var(--line)}
+  nav .logo{font-family:var(--mono);font-size:13px;letter-spacing:.04em;color:var(--muted)}
+  nav .logo b{color:var(--ink);font-weight:500}
+  nav .links{display:flex;gap:26px;font-family:var(--mono);font-size:12.5px;letter-spacing:.03em}
+  nav .links a{color:var(--muted);transition:color .25s}
+  nav .links a:hover{color:var(--accent)}
+  @media(max-width:680px){nav .links{display:none}}
+
+  /* ---------- HERO ---------- */
+  header{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 0 80px}
+  .eyebrow{
+    font-family:var(--mono);font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:28px;
+  }
+  h1{
+    font-family:var(--serif);font-weight:500;
+    font-size:clamp(3.2rem,9vw,7rem);line-height:.96;letter-spacing:-.02em;
+    font-optical-sizing:auto;
+  }
+  h1 .it{font-style:italic;font-weight:400}
+  .tagline{
+    font-family:var(--serif);font-style:italic;font-weight:400;
+    font-size:clamp(1.3rem,3.2vw,2rem);color:var(--muted);
+    margin-top:26px;max-width:760px;line-height:1.35;
+  }
+  .tagline em{color:var(--ink);font-style:italic}
+  .hero-meta{
+    margin-top:40px;display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;
+    font-family:var(--mono);font-size:13px;color:var(--muted);
+  }
+  .hero-meta .dot{width:5px;height:5px;border-radius:50%;background:var(--accent);display:inline-block;margin-right:9px;vertical-align:middle}
+  .cta{margin-top:44px;display:flex;flex-wrap:wrap;gap:14px}
+  .btn{
+    font-family:var(--mono);font-size:13.5px;letter-spacing:.02em;
+    padding:13px 22px;border-radius:2px;border:1px solid var(--line);
+    color:var(--ink);transition:all .25s;display:inline-flex;align-items:center;gap:9px;
+  }
+  .btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+  .btn.primary{background:var(--accent);color:#11130f;border-color:var(--accent);font-weight:500}
+  .btn.primary:hover{background:transparent;color:var(--accent);transform:translateY(-2px)}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:96px 0;position:relative}
+  .sec-label{
+    font-family:var(--mono);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--muted-2);margin-bottom:36px;display:flex;align-items:center;gap:16px;
+  }
+  .sec-label::after{content:"";height:1px;flex:1;background:var(--line)}
+  h2{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,4.5vw,3rem);letter-spacing:-.01em;line-height:1.05}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:56px;align-items:start}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr;gap:28px}}
+  .about-grid p{color:var(--muted);font-size:1.08rem;margin-bottom:18px}
+  .about-grid p strong{color:var(--ink);font-weight:600}
+  .about-grid .lead{font-family:var(--serif);font-size:1.5rem;line-height:1.3;color:var(--ink);font-weight:400}
+
+  /* ---------- PROJECTS ---------- */
+  .projects{display:flex;flex-direction:column;gap:0}
+  .project{
+    display:grid;grid-template-columns:90px 1fr auto;gap:32px;align-items:baseline;
+    padding:38px 0;border-top:1px solid var(--line);
+    transition:padding .3s;
+  }
+  .project:last-child{border-bottom:1px solid var(--line)}
+  .project:hover{padding-left:14px;padding-right:14px}
+  .project .num{font-family:var(--mono);font-size:13px;color:var(--accent)}
+  .project .body h3{font-family:var(--serif);font-weight:500;font-size:1.7rem;letter-spacing:-.01em;margin-bottom:6px;transition:color .25s}
+  .project:hover .body h3{color:var(--accent)}
+  .project .role{font-family:var(--mono);font-size:12px;color:var(--muted-2);letter-spacing:.04em;text-transform:uppercase;margin-bottom:14px}
+  .project .desc{color:var(--muted);max-width:620px;font-size:1rem}
+  .tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+  .tag{font-family:var(--mono);font-size:11.5px;color:var(--muted);background:var(--bg-3);border:1px solid var(--line);padding:4px 10px;border-radius:2px}
+  .project .meta-links{display:flex;flex-direction:column;gap:10px;align-items:flex-end;white-space:nowrap}
+  .project .meta-links a{font-family:var(--mono);font-size:12.5px;color:var(--muted);transition:color .25s;border-bottom:1px solid transparent}
+  .project .meta-links a:hover{color:var(--accent);border-bottom-color:var(--accent)}
+  @media(max-width:760px){
+    .project{grid-template-columns:1fr;gap:14px}
+    .project .meta-links{flex-direction:row;gap:18px;align-items:flex-start;margin-top:6px}
+    .project:hover{padding-left:0;padding-right:0}
+  }
+
+  /* ---------- SKILLS ---------- */
+  .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  @media(max-width:680px){.skills-grid{grid-template-columns:1fr}}
+  .skill-cell{background:var(--bg);padding:28px}
+  .skill-cell h4{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  .skill-cell p{color:var(--muted);font-size:.98rem;line-height:1.7}
+
+  /* ---------- CONTACT ---------- */
+  .contact{text-align:center;padding:110px 0 90px}
+  .contact h2{margin-bottom:18px}
+  .contact .big{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.4rem);font-weight:400}
+  .contact a.mail{color:var(--accent);border-bottom:1px solid var(--accent);font-style:italic}
+  .contact .social{margin-top:40px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+  footer{border-top:1px solid var(--line);padding:30px 0;font-family:var(--mono);font-size:12px;color:var(--muted-2);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .hero-stagger > *{opacity:0;transform:translateY(20px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+  .hero-stagger > *:nth-child(1){animation-delay:.05s}
+  .hero-stagger > *:nth-child(2){animation-delay:.18s}
+  .hero-stagger > *:nth-child(3){animation-delay:.31s}
+  .hero-stagger > *:nth-child(4){animation-delay:.44s}
+  .hero-stagger > *:nth-child(5){animation-delay:.57s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){.reveal,.hero-stagger>*{opacity:1;transform:none;animation:none}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="logo"><b>Tassadit Debiane</b> — ML / Research Engineer</div>
+  <div class="links">
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap hero-stagger">
+    <div class="eyebrow">Generative AI · Computer Vision · Medical Imaging</div>
+    <h1>Tassadit<br><span class="it">Debiane</span></h1>
+    <p class="tagline">I build <em>generative-AI and computer-vision pipelines</em> — from diffusion models to representation learning — with a focus on rigorous evaluation and biomedical imaging.</p>
+    <div class="hero-meta">
+      <span><span class="dot"></span>M.Sc. Data Science &amp; AI — Université Paris Cité</span>
+      <span><span class="dot"></span>Paris, France</span>
+      <span><span class="dot"></span>Available October 2026</span>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="mailto:tassaditdebiane01@hotmail.com">Get in touch</a>
+      <a class="btn" href="cv.pdf" target="_blank">Résumé ↗</a>
+      <a class="btn" href="https://github.com/DebianeTassadit" target="_blank">GitHub ↗</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-label">About</div>
+    <div class="about-grid">
+      <p class="lead reveal">Turning research into working pipelines — and reading my own results honestly enough to let them redirect the architecture.</p>
+      <div>
+        <p class="reveal">I'm an ML / research engineer finishing an M.Sc. in Data Science &amp; AI at <strong>Université Paris Cité</strong> (High Honors). Over the past year, as an apprentice at <strong>Zorba Group</strong>, I've built generative-AI pipelines for biomedical imaging: fine-tuning diffusion models, conditioning image generation on anatomical structure, and benchmarking vision-language models — end to end, from data curation to evaluation.</p>
+        <p class="reveal">Before that, I researched <strong>representation learning and anomaly detection</strong> at <strong>Centre Borelli (CNRS)</strong>. I'm equally at home diagnosing a low-level weight-conversion bug in a diffusion backbone and designing a clean evaluation protocol with FID/KID and embedding projections.</p>
+        <p class="reveal">I care about reproducibility, scientific rigor, and shipping. Kaggle Top 2% · fluent in French &amp; English.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-label">Selected Work</div>
+    <div class="projects">
+
+      <article class="project reveal">
+        <div class="num">01</div>
+        <div class="body">
+          <h3>Generative AI for Biomedical Imaging</h3>
+          <div class="role">Apprenticeship · Zorba Group · 2025–2026</div>
+          <p class="desc">End-to-end pipeline for synthetic histological image generation conditioned on clinical structure. Diffusion fine-tuning (SDXL, Flux, LoRA), structure-conditioned generation with ControlNet on multi-class segmentation maps, and a vision-language-model benchmark (Pixtral vs. Idefics3) with automatic metrics and a human-annotation interface. Evaluation via FID/KID and DINOv2 embedding projections.</p>
+          <div class="tags">
+            <span class="tag">Diffusion</span><span class="tag">Flux / SDXL</span><span class="tag">LoRA</span><span class="tag">ControlNet</span><span class="tag">VLM</span><span class="tag">diffusers</span><span class="tag">PyTorch</span>
+          </div>
+        </div>
+        <div class="meta-links">
+          <span style="font-family:var(--mono);font-size:11.5px;color:var(--muted-2)">methods write-up ↓</span>
+          <a href="https://github.com/DebianeTassadit/diffusion-imaging-notes" target="_blank">Technical note ↗</a>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="num">02</div>
+        <div class="body">
+          <h3>Large Language Models Enable Few-Shot Clustering</h3>
+          <div class="role">M.Sc. Research Project · Université Paris Cité · 2026</div>
+          <p class="desc">Reproduction and critical extension of Viswanathan et al. (2024). We benchmarked eight LLM-augmented clustering strategies on Bank77, CLINC150 and Tweet using GPT-4.1-nano for under $0.50, then proposed two novel methods — LLM Semantic Normalization and Paraphrase Ensemble — that beat all baselines on 2/3 datasets. Team of four; jury defense and A0 poster.</p>
+          <div class="tags">
+            <span class="tag">LLM</span><span class="tag">Clustering</span><span class="tag">Embeddings</span><span class="tag">Few-shot</span><span class="tag">Python</span>
+          </div>
+        </div>
+        <div class="meta-links">
+          <a href="https://github.com/DebianeTassadit/llm-augmented-clustering" target="_blank">Code ↗</a>
+          <a href="https://github.com/DebianeTassadit/llm-augmented-clustering/blob/main/poster.pdf" target="_blank">Poster ↗</a>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="num">03</div>
+        <div class="body">
+          <h3>Marginalized SDA for Mixed-Type Clustering</h3>
+          <div class="role">Research Internship · Centre Borelli, CNRS · 2025</div>
+          <p class="desc">A graph-regularized marginalized stacked denoising autoencoder (mSDA) for clustering mixed numerical/categorical data. Multi-view similarity fusion (RBF + cosine) guides closed-form denoising, followed by spectral clustering. Evaluated against k-SubMix on UCI and synthetic benchmarks (NMI / ARI / accuracy) with UMAP analysis. Closed-form, CPU-fast, no iterative training.</p>
+          <div class="tags">
+            <span class="tag">Representation learning</span><span class="tag">Autoencoders</span><span class="tag">Anomaly detection</span><span class="tag">Spectral clustering</span><span class="tag">NumPy / SciPy</span>
+          </div>
+        </div>
+        <div class="meta-links">
+          <a href="https://github.com/DebianeTassadit/marginalized-sda-mixed-clustering" target="_blank">Code ↗</a>
+          <a href="https://github.com/DebianeTassadit/marginalized-sda-mixed-clustering/blob/main/paper.pdf" target="_blank">Paper draft ↗</a>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="num">04</div>
+        <div class="body">
+          <h3>Object Detection</h3>
+          <div class="role">Computer Vision · Personal Project</div>
+          <p class="desc">Object detection pipeline in Python — model training, inference and evaluation on image data.</p>
+          <div class="tags">
+            <span class="tag">Computer Vision</span><span class="tag">Object detection</span><span class="tag">Python</span><span class="tag">PyTorch</span>
+          </div>
+        </div>
+        <div class="meta-links">
+          <a href="https://github.com/DebianeTassadit/object-detection" target="_blank">Code ↗</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-label">Skills</div>
+    <h2 class="reveal" style="margin-bottom:42px">What I work with</h2>
+    <div class="skills-grid reveal">
+      <div class="skill-cell">
+        <h4>Generative AI</h4>
+        <p>Diffusion models (SDXL, Flux), LoRA fine-tuning (kohya), ControlNet &amp; conditional generation, diffusers, VAEs, mixed-precision &amp; multi-GPU training.</p>
+      </div>
+      <div class="skill-cell">
+        <h4>Computer Vision &amp; Multimodal</h4>
+        <p>Semantic segmentation, vision encoders / foundation models (UNI2-h, DINOv2), vision-language models (Pixtral, Idefics3), image analysis, object detection.</p>
+      </div>
+      <div class="skill-cell">
+        <h4>ML &amp; Representation</h4>
+        <p>Representation learning, denoising autoencoders, anomaly detection (one-class), clustering (spectral, K-means), distribution-shift / OOD analysis, FID/KID &amp; embedding evaluation.</p>
+      </div>
+      <div class="skill-cell">
+        <h4>Engineering &amp; Tools</h4>
+        <p>Python, PyTorch, Hugging Face (Transformers / Diffusers), Docker, Git, accelerate, Gradio. Comfortable from research notebook to packaged, deployable pipeline.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-label" style="justify-content:center">Contact</div>
+    <p class="big reveal">Looking for an ML / research role or PhD<br>in <span style="color:var(--accent)">generative AI, vision or medical imaging</span> — from October 2026.</p>
+    <p class="reveal" style="margin-top:24px;color:var(--muted)">Reach me at <a class="mail" href="mailto:tassaditdebiane01@hotmail.com">tassaditdebiane01@hotmail.com</a></p>
+    <div class="social reveal">
+      <a class="btn" href="https://www.linkedin.com/in/tassadit--debiane/" target="_blank">LinkedIn ↗</a>
+      <a class="btn" href="https://github.com/DebianeTassadit" target="_blank">GitHub ↗</a>
+      <a class="btn" href="https://www.kaggle.com/tassaditdebiane" target="_blank">Kaggle ↗</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <footer>
+      <span>© <span id="yr"></span> Tassadit Debiane</span>
+      <span>Paris · ML / Research Engineer</span>
+    </footer>
+  </div>
+</section>
+
+<script>
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
