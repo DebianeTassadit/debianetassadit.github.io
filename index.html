@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Tassadit Debiane - ML / Research Engineer</title>
-<meta name="description" content="Tassadit Debiane - Generative AI, Computer Vision and Medical Imaging. ML / Research Engineer based in Paris." />
+<title>Tassadit Debiane — ML / Research Engineer</title>
+<meta name="description" content="Tassadit Debiane — Generative AI, Computer Vision and Medical Imaging. ML / Research Engineer based in Paris." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -172,7 +172,7 @@
 <body>
 
 <nav id="nav">
-  <div class="logo"><b>Tassadit Debiane</b> - ML / Research Engineer</div>
+  <div class="logo"><b>Tassadit Debiane</b> — ML / Research Engineer</div>
   <div class="links">
     <a href="#about">About</a>
     <a href="#work">Work</a>
@@ -185,15 +185,15 @@
   <div class="wrap hero-stagger">
     <div class="eyebrow">Generative AI · Computer Vision · Medical Imaging</div>
     <h1>Tassadit<br><span class="it">Debiane</span></h1>
-    <p class="tagline">I build <em>generative-AI and computer-vision pipelines</em>, from diffusion models to representation learning, with a focus on rigorous evaluation and biomedical imaging.</p>
+    <p class="tagline">I build <em>generative-AI and computer-vision pipelines</em> — from diffusion models to representation learning — with a focus on rigorous evaluation and biomedical imaging.</p>
     <div class="hero-meta">
-      <span><span class="dot"></span>M.Sc. Data Science &amp; AI - Université Paris Cité</span>
+      <span><span class="dot"></span>M.Sc. Data Science &amp; AI — Université Paris Cité</span>
       <span><span class="dot"></span>Paris, France</span>
       <span><span class="dot"></span>Available October 2026</span>
     </div>
     <div class="cta">
       <a class="btn primary" href="mailto:tassaditdebiane01@hotmail.com">Get in touch</a>
-      <a class="btn" href="cv.pdf" target="_blank">Resume ↗</a>
+      <a class="btn" href="cv.pdf" target="_blank">Résumé ↗</a>
       <a class="btn" href="https://github.com/DebianeTassadit" target="_blank">GitHub ↗</a>
     </div>
   </div>
@@ -203,9 +203,9 @@
   <div class="wrap">
     <div class="sec-label">About</div>
     <div class="about-grid">
-      <p class="lead reveal">Turning research into working pipelines, and reading my own results honestly enough to let them redirect the architecture.</p>
+      <p class="lead reveal">Turning research into working pipelines — and reading my own results honestly enough to let them redirect the architecture.</p>
       <div>
-        <p class="reveal">I'm an ML / research engineer finishing an M.Sc. in Data Science &amp; AI at <strong>Université Paris Cité</strong> (High Honors). Over the past year, as an apprentice at <strong>Zorba Group</strong>, I've built generative-AI pipelines for biomedical imaging: fine-tuning diffusion models, conditioning image generation on anatomical structure, and benchmarking vision-language models : end to end, from data curation to evaluation.</p>
+        <p class="reveal">I'm an ML / research engineer finishing an M.Sc. in Data Science &amp; AI at <strong>Université Paris Cité</strong> (High Honors). Over the past year, as an apprentice at <strong>Zorba Group</strong>, I've built generative-AI pipelines for biomedical imaging: fine-tuning diffusion models, conditioning image generation on anatomical structure, and benchmarking vision-language models — end to end, from data curation to evaluation.</p>
         <p class="reveal">Before that, I researched <strong>representation learning and anomaly detection</strong> at <strong>Centre Borelli (CNRS)</strong>. I'm equally at home diagnosing a low-level weight-conversion bug in a diffusion backbone and designing a clean evaluation protocol with FID/KID and embedding projections.</p>
         <p class="reveal">I care about reproducibility, scientific rigor, and shipping. Kaggle Top 2% · fluent in French &amp; English.</p>
       </div>
@@ -237,9 +237,24 @@
       <article class="project reveal">
         <div class="num">02</div>
         <div class="body">
+          <h3>Diffusion Priors for Inverse Problems</h3>
+          <div class="role">Personal Research Project · 2026</div>
+          <p class="desc">A diffusion model trained as a <em>learned prior</em>, then used to solve imaging inverse problems via Diffusion Posterior Sampling (DPS). On public CT slices (OrganAMNIST): box inpainting and ×4 super-resolution. Evaluated with PSNR / SSIM / LPIPS against baselines — for ×4 super-resolution, DPS matches bicubic on PSNR/SSIM while cutting LPIPS ~4.6×, a clear perception–distortion tradeoff.</p>
+          <div class="tags">
+            <span class="tag">Diffusion</span><span class="tag">DDPM</span><span class="tag">DPS</span><span class="tag">Inverse problems</span><span class="tag">Super-resolution</span><span class="tag">PyTorch</span>
+          </div>
+        </div>
+        <div class="meta-links">
+          <a href="https://github.com/DebianeTassadit/diffusion-priors-inverse-problems" target="_blank">Code ↗</a>
+        </div>
+      </article>
+
+      <article class="project reveal">
+        <div class="num">03</div>
+        <div class="body">
           <h3>Large Language Models Enable Few-Shot Clustering</h3>
           <div class="role">M.Sc. Research Project · Université Paris Cité · 2026</div>
-          <p class="desc">Reproduction and critical extension of Viswanathan et al. (2024). We benchmarked eight LLM-augmented clustering strategies on Bank77, CLINC150 and Tweet using GPT-4.1-nano for under $0.50, then proposed two novel methods (LLM Semantic Normalization and Paraphrase Ensemble) that beat all baselines on 2/3 datasets. Team of four; jury defense and A0 poster.</p>
+          <p class="desc">Reproduction and critical extension of Viswanathan et al. (2024). We benchmarked eight LLM-augmented clustering strategies on Bank77, CLINC150 and Tweet using GPT-4.1-nano for under $0.50, then proposed two novel methods — LLM Semantic Normalization and Paraphrase Ensemble — that beat all baselines on 2/3 datasets. Team of four; jury defense and A0 poster.</p>
           <div class="tags">
             <span class="tag">LLM</span><span class="tag">Clustering</span><span class="tag">Embeddings</span><span class="tag">Few-shot</span><span class="tag">Python</span>
           </div>
@@ -251,7 +266,7 @@
       </article>
 
       <article class="project reveal">
-        <div class="num">03</div>
+        <div class="num">04</div>
         <div class="body">
           <h3>Marginalized SDA for Mixed-Type Clustering</h3>
           <div class="role">Research Internship · Centre Borelli, CNRS · 2025</div>
@@ -267,13 +282,13 @@
       </article>
 
       <article class="project reveal">
-        <div class="num">04</div>
+        <div class="num">05</div>
         <div class="body">
-          <h3>Object Detection</h3>
-          <div class="role">Computer Vision · Personal Project</div>
-          <p class="desc">Object detection pipeline in Python : model training, inference and evaluation on image data.</p>
+          <h3>Pedestrian Detection with Faster R-CNN</h3>
+          <div class="role">Computer Vision · Personal Project · 2026</div>
+          <p class="desc">Fine-tuning a Faster R-CNN detector (torchvision, COCO-pretrained ResNet-50 FPN) on the Penn-Fudan pedestrian dataset — transfer learning with a full training / inference / evaluation loop reporting COCO-style mAP. Clean, reproducible PyTorch pipeline.</p>
           <div class="tags">
-            <span class="tag">Computer Vision</span><span class="tag">Object detection</span><span class="tag">Python</span><span class="tag">PyTorch</span>
+            <span class="tag">Computer Vision</span><span class="tag">Object detection</span><span class="tag">Faster R-CNN</span><span class="tag">Transfer learning</span><span class="tag">torchvision</span><span class="tag">PyTorch</span>
           </div>
         </div>
         <div class="meta-links">
@@ -313,7 +328,7 @@
 <section class="contact" id="contact">
   <div class="wrap">
     <div class="sec-label" style="justify-content:center">Contact</div>
-    <p class="big reveal">Looking for an ML / research role or PhD<br>in <span style="color:var(--accent)">generative AI, vision or medical imaging</span> - from October 2026.</p>
+    <p class="big reveal">Looking for an ML / research role or PhD<br>in <span style="color:var(--accent)">generative AI, vision or medical imaging</span> — from October 2026.</p>
     <p class="reveal" style="margin-top:24px;color:var(--muted)">Reach me at <a class="mail" href="mailto:tassaditdebiane01@hotmail.com">tassaditdebiane01@hotmail.com</a></p>
     <div class="social reveal">
       <a class="btn" href="https://www.linkedin.com/in/tassadit--debiane/" target="_blank">LinkedIn ↗</a>
